@@ -101,7 +101,7 @@
       }
       .four-page {
         width: 91%;
-        height: 75%;
+        height: 73%;
         background: #ffffff;
         margin: 13% auto 0;
         font-size: 1.4rem;
@@ -146,11 +146,11 @@
       }
       .customer-item-name {
         display: inline-block;
-        flex: 1;
+        flex: 1.2;
       }
       .customer-item-department {
         display: inline-block;
-        flex: 1.5;
+        flex: 1.6;
       }
       .customer-item-clinic {
         display: inline-block;
@@ -158,9 +158,9 @@
         text-align: right;
       }
       .four-page-result {
-        margin: 0 4%;
+        margin: 0.1rem 4% 0;
         padding-top: 8%;
-        height: 43%;
+        height: 45%;
         border-top: 1px dotted #333333;
         border-bottom: 1px dotted #333333;
       }
@@ -170,9 +170,10 @@
       .four-page-sign {
         padding: 3% 4% 1%;
         display: flex;
+        font-size: 1.2rem;
       }
       .four-page-sign-left {
-        flex: 1.2;
+        flex: 1;
       }
       .four-page-sign-left-img {
         width: 50%;
@@ -191,6 +192,14 @@
       }
       .four-page-content-img {
         display: none;
+      }
+      p {
+        line-height: 2rem;
+      }
+      @media screen and (max-width: 350px) {
+        .four-page {
+          height: 75%;
+        }
       }
     </style>
   </head>
@@ -426,39 +435,43 @@
       function dealNoCare() {}
       //最后结果页
       function dealResult() {
-        var customerName=document.getElementsByClassName("customer-item-name")[0];
-        var signDate=document.getElementsByClassName("four-page-sign-date")[0];
+        var customerName = document.getElementsByClassName(
+          "customer-item-name"
+        )[0];
+        var signDate = document.getElementsByClassName(
+          "four-page-sign-date"
+        )[0];
         // // 首先进入loading页面
         //     app.style.backgroundImage = "url('./images/background3.jpg')";
-          secondPage.style.display = "none";
+        secondPage.style.display = "none";
         //   threePage.style.display = "block";
 
         app.style.backgroundImage = "url('./images/background4.jpg')";
         threePage.style.display = "none";
         fourPage.style.display = "block";
-        customerName.innerHTML='姓名：'+nameValue;
-        signDate.innerHTML='日期：'+this.getNowDate();
+        customerName.innerHTML = "姓名：" + nameValue;
+        signDate.innerHTML = "日期：" + this.getNowDate();
         fourPageImg.style.display = "block";
 
         //loading页面显示2秒后进入结果页面
         // setTimeout(function() {
         //                 }, 2000);
       }
-      function getNowDate(){
+      function getNowDate() {
         var now = new Date();
-       var year = now.getFullYear();       //年
-       var month = now.getMonth() + 1;     //月
-       var day = now.getDate();            //日
-       var clock = year + "年";
-       if(month < 10){
-        clock += "0";
-       }
-       clock += month + "月";
-       if(day < 10){
-        clock += "0";
-       }
-       clock += day + "日";
-       return(clock); 
+        var year = now.getFullYear(); //年
+        var month = now.getMonth() + 1; //月
+        var day = now.getDate(); //日
+        var clock = year + "年";
+        if (month < 10) {
+          clock += "0";
+        }
+        clock += month + "月";
+        if (day < 10) {
+          clock += "0";
+        }
+        clock += day + "日";
+        return clock;
       }
     </script>
   </body>
