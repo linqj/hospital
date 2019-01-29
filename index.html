@@ -278,7 +278,7 @@
             <img src="./images/qr_code.jpg" class="four-page-sign-left-img" />
           </div>
           <div class="four-page-sign-right">
-            <p>日期：</p>
+            <p class="four-page-sign-date">日期：</p>
             <p>医师：Dr.Kaopu</p>
             <img
               src="./images/stamp.png"
@@ -299,6 +299,11 @@
       var app = document.getElementById("app");
       var firstPage = document.getElementsByClassName("first-page")[0];
       var secondPage = document.getElementsByClassName("second-page")[0];
+      var threePage = document.getElementsByClassName("three-page")[0];
+      var fourPage = document.getElementsByClassName("four-page")[0];
+      var fourPageImg = document.getElementsByClassName(
+        "four-page-content-img"
+      )[0];
       var firstPageInput = document.getElementsByClassName(
         "first-page-input"
       )[0];
@@ -328,6 +333,7 @@
       }
       //根据第几题展示内容
       function operateOption(num) {
+        var that = this;
         var option = questionData.find(item => {
           return item.order == num;
         });
@@ -337,9 +343,9 @@
           parentNode.children[1].innerHTML = item.value;
           parentNode.children[0].setAttribute("src", "./images/radio.png");
         });
-        if(option.options.length<4){
+        if (option.options.length < 4) {
           var parentNode = secondPageContents[3];
-          parentNode.children[1].innerHTML = '';
+          parentNode.children[1].innerHTML = "";
           parentNode.children[0].setAttribute("src", "");
         }
         for (var i = 0; i < secondPageContents.length; i++) {
@@ -367,24 +373,24 @@
                 } else if (num == 8) {
                   if (i == "0") {
                     pageNum = 4;
-                  } else if (i == "2") {
+                  } else if (i == "1") {
                     pageNum = 2;
                   } else {
                     //选择了管你屁事
                     this.dealNoCare();
                   }
                 } else if (num == 4) {
-                  if(i==2){
+                  if (i == 2) {
                     //选择了管你屁事
                     this.dealNoCare();
-                  }else{
+                  } else {
                     pageNum = 2;
                   }
                 } else if (num == 2) {
-                  if(i==2){
+                  if (i == 2) {
                     //选择了管你屁事
                     this.dealNoCare();
-                  }else{
+                  } else {
                     pageNum = 5;
                   }
                 } else if (num == 3) {
@@ -394,34 +400,66 @@
                     pageNum = 5;
                   }
                 } else if (num == 6) {
-                  if(i==2){
+                  if (i == 2) {
                     //选择了管你屁事
                     this.dealNoCare();
-                  }else{
+                  } else {
                     pageNum = 7;
                   }
                 } else if (num == 7) {
                   pageNum = 5;
                 } else if (num == 5) {
                   //最后一题进入loading页面
-                  this.dealResult();
+                  that.dealResult();
                 }
-                setTimeout(function() {
-                  return operateOption(pageNum);
-                }, 400);
+                if (num != 5) {
+                  setTimeout(function() {
+                    return operateOption(pageNum);
+                  }, 400);
+                }
               };
             })(i);
           }
         }
       }
       //处理关你屁事的选项
-      function dealNoCare(){
+      function dealNoCare() {}
+      //最后结果页
+      function dealResult() {
+        var customerName=document.getElementsByClassName("customer-item-name")[0];
+        var signDate=document.getElementsByClassName("four-page-sign-date")[0];
+        // // 首先进入loading页面
+        //     app.style.backgroundImage = "url('./images/background3.jpg')";
+          secondPage.style.display = "none";
+        //   threePage.style.display = "block";
 
+        app.style.backgroundImage = "url('./images/background4.jpg')";
+        threePage.style.display = "none";
+        fourPage.style.display = "block";
+        customerName.innerHTML='姓名：'+nameValue;
+        signDate.innerHTML='日期：'+this.getNowDate();
+        fourPageImg.style.display = "block";
+
+        //loading页面显示2秒后进入结果页面
+        // setTimeout(function() {
+        //                 }, 2000);
       }
-        //最后结果页
-        function dealResult(){
-
-}
+      function getNowDate(){
+        var now = new Date();
+       var year = now.getFullYear();       //年
+       var month = now.getMonth() + 1;     //月
+       var day = now.getDate();            //日
+       var clock = year + "年";
+       if(month < 10){
+        clock += "0";
+       }
+       clock += month + "月";
+       if(day < 10){
+        clock += "0";
+       }
+       clock += day + "日";
+       return(clock); 
+      }
     </script>
   </body>
 </html>
