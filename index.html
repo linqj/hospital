@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="referrer" content="always" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <title>不靠谱医院活动</title>
+    <link rel="stylesheet" type="text/css" href="./icomoon/style.css" />
+    <script src="./data.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        font-size: 10px;
+      }
+      #app {
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        /* background: #e4f1ff; */
+        background-image: url("./images/background4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      input {
+        border: 1px solid red;
+        line-height: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+      }
+      .first-page {
+        margin-top: 131.6%;
+        padding: 0 27.3%;
+        display: block;
+      }
+      .first-page-input {
+        width: 100%;
+        display: block;
+        border: 0.2rem solid #50352b;
+        line-height: 4.4rem;
+        border-radius: 2.2rem;
+        text-align: center;
+        font-size: 1.3rem;
+        color: #999999;
+        outline: none;
+      }
+      .first-page-button {
+        width: 100%;
+        display: block;
+        margin-top: 2rem;
+        height: auto;
+      }
+      .second-page {
+        width: 62.1%;
+        margin: 35% auto 0;
+        font-size: 1.6rem;
+        color: #333333;
+        display: block;
+        font-weight: 500;
+      }
+      .second-page-title {
+        margin-bottom: 1.35rem;
+      }
+      .content-img,
+      .content-tip,
+      .icon-circle,
+      .icon-circle_checked {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .content-img {
+        width: 1.6rem;
+        height: auto;
+        display: inline-block;
+        margin-right: 0.2rem;
+      }
+      .second-page-content {
+        margin-top: 1.5rem;
+      }
+      .three-page {
+        widows: 100%;
+        height: 100%;
+      }
+      .four-page {
+        width: 91%;
+        height: 72%;
+        margin: 14.5% auto 0;
+        font-size: 1.4rem;
+      }
+      .four-page-title {
+        padding-top: 12%;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .four-page-title-second {
+        margin-top: 8%;
+        text-align: center;
+      }
+      .four-page-customer {
+        margin: 5% 4% 0;
+        /* border-bottom: 1px dotted #333333; */
+        display: flex;
+        justify-content: space-between;
+      }
+      .customer-item {
+        display: inline-block;
+        flex: 1;
+      }
+      .customer-item:last-child {
+        text-align: right;
+      }
+      .four-page-result {
+        margin: 0 4%;
+        padding: 10% 0;
+        border-top: 1px dotted #333333;
+        border-bottom: 1px dotted #333333;
+      }
+      .four-page-result-text {
+        margin-top: 10%;
+      }
+      .four-page-sign {
+        padding: 4% 4% 0;
+        display: flex;
+      }
+      .four-page-sign-left {
+        flex: 1;
+      }
+      .four-page-sign-left-img {
+        width: 8rem;
+        height: 8rem;
+      }
+      .four-page-sign-right {
+        flex: 1;
+        position:relative;
+      }
+      .four-page-sign-right-img{
+        width:10rem;
+        height:auto;
+        position:absolute;
+        left:-0.5rem;
+        top:1.2rem;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 第一页 -->
+      <!-- <div class="first-page">
+        <input
+          type="text"
+          placeholder="请输入您的姓名"
+          class="first-page-input"
+        />
+        <img
+          src="./images/button.png"
+          alt=""
+          class="first-page-button"
+          onclick="toInsure()"
+        />
+      </div> -->
+      <!-- <div class="second-page">
+        <p class="second-page-title">第一口吃什么</p>
+        <div class="second-page-content">
+            <img src="./images/radio.png" class="content-img">
+          <span class="content-tip"></span>
+        </div>
+        <div class="second-page-content">
+          <img src="./images/radio.png" class="content-img">
+           <span class="content-tip"></span>
+        </div>
+        <div class="second-page-content">
+            <img src="./images/radio.png" class="content-img">
+            <span class="content-tip"></span>
+        </div>
+        <div class="second-page-content">
+            <img src="./images/radio.png" class="content-img">
+            <span class="content-tip"></span>
+        </div>
+      </div> -->
+      <!-- <div class="three-page">
+        <svg
+        style="width:100%;height:100%;"
+        xmlns="http://www.w3.org/2000/svg"
+        id="mySVG"
+        viewBox="0 0 100% 100%"
+        preserveAspectRatio="xMidYMid meet"
+      >
+          <image
+            xlink:href="./images/sun.png"
+            x="7%"
+            y="5%"
+            display="block"
+            width="86%"
+            height="50"
+          >
+          <animate
+          attributeName="y"
+          values="5%;70%;5%"
+          begin="0s"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+        </image>
+        </svg>
+      </div> -->
+      <div class="four-page">
+        <p class="four-page-title">春节假期综合症专科诊疗医院</p>
+        <p class="four-page-title-second">诊断证明书</p>
+        <div class="four-page-customer">
+          <span class="customer-item">姓名</span>
+          <span class="customer-item">性别：变态反应科</span>
+          <span class="customer-item">门诊诊断</span>
+        </div>
+        <div class="four-page-result">
+          <p>诊断及建议</p>
+          <p>
+            间歇性情绪不稳定；眼球不定时上翻难以控制，主要表现在不愿确认眼神，怼天怼地怼空气，一不小心就爆炸。
+          </p>
+          <p class="four-page-result-text">
+            建议休息一周，以食物修身养性，避免影响节后工作。
+          </p>
+        </div>
+        <div class="four-page-sign">
+          <div class="four-page-sign-left">
+            <img src="./images/qr_code.jpg" class="four-page-sign-left-img" />
+          </div>
+          <div class="four-page-sign-right">
+            <p>日期：</p>
+            <p>医师：Dr.Kaopu</p>
+            <img src="./images/stamp.png" alt="" class="four-page-sign-right-img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 点击立即诊断
+      var app = document.getElementById("app");
+      var firstPage = document.getElementsByClassName("first-page")[0];
+      var secondPage = document.getElementsByClassName("second-page")[0];
+      var firstPageInput = document.getElementsByClassName(
+        "first-page-input"
+      )[0];
+      var secondPageTitle = document.getElementsByClassName(
+        "second-page-title"
+      )[0];
+      var secondPageContents = document.getElementsByClassName(
+        "second-page-content"
+      );
+      var merrageCode = null; //婚姻状况
+
+      // var pageNum = 0 || sessionStorage.getItem("pageNum");
+      var pageNum = 0; //当前是第几题
+      var nameValue = null; //用户输入的名称
+      function toInsure() {
+        nameValue = firstPageInput.value;
+        //判断是否已经输入了值
+        if (!nameValue) {
+          alert("请输入您的姓名");
+        } else {
+          //点击立即诊断，换背景图片隐藏首页的内容
+          app.style.backgroundImage = "url('./images/background2.jpg')";
+          firstPage.style.display = "none";
+          secondPage.style.display = "block";
+          sessionStorage.setItem("pageNum", pageNum);
+          sessionStorage.setItem("nameValue", nameValue);
+        }
+        this.operateOption(pageNum);
+      }
+      //根据第几题展示内容
+      function operateOption(num) {
+        var option = questionData.find(item => {
+          return item.order == num;
+        });
+        secondPageTitle.innerHTML = option.title;
+        option.options.forEach((item, index) => {
+          var parentNode = secondPageContents[index];
+          parentNode.children[1].innerHTML = item.value;
+          parentNode.children[0].setAttribute("src", "./images/radio.png");
+        });
+        for (var i = 0; i < secondPageContents.length; i++) {
+          let childValue = secondPageContents[i].children[1].innerText;
+          if (childValue) {
+            (function(i) {
+              secondPageContents[i].onclick = function() {
+                secondPageContents[i].children[0].setAttribute(
+                  "src",
+                  "./images/radio_checked.png"
+                );
+                if (num == "0") {
+                  pageNum += 1;
+                } else if (num == "1") {
+                  merrageCode = i;
+                  //第二题判断是选择的那一道题
+                  if (i == "0") {
+                    pageNum = 10;
+                    //选择已婚
+                  }
+                } else if (pageNum == 10 && merrageCode == "0") {
+                }
+
+                setTimeout(function() {
+                  return operateOption(pageNum);
+                }, 500);
+              };
+            })(i);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
