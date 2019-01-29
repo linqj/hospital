@@ -37,6 +37,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        position:relative;
       }
       input {
         border: 1px solid red;
@@ -100,8 +101,30 @@
       .four-page {
         width: 91%;
         height: 72%;
+        background: #ffffff;
         margin: 14.5% auto 0;
         font-size: 1.4rem;
+      }
+      .four-page-clip{
+        position:absolute;
+        top:5.8%;
+        left:20%;
+        width:60%;
+        height:auto;
+      }
+      .four-page-left-hand{
+        position:absolute;
+        top:10%;
+        left:-5%;
+        width:20%;
+        height:auto;
+      }
+      .four-page-right-hand{
+        position:absolute;
+        top:10%;
+        right:-5%;
+        width:20%;
+        height:auto;
       }
       .four-page-title {
         padding-top: 11%;
@@ -119,22 +142,23 @@
         display: flex;
         justify-content: space-between;
       }
-      .customer-item-name{
+      .customer-item-name {
         display: inline-block;
         flex: 1;
       }
-      .customer-item-department{
+      .customer-item-department {
         display: inline-block;
         flex: 1.5;
       }
-      .customer-item-clinic{
+      .customer-item-clinic {
         display: inline-block;
         flex: 1;
-        text-align: right; 
+        text-align: right;
       }
       .four-page-result {
         margin: 0 4%;
         padding: 9% 0;
+        height:45%;
         border-top: 1px dotted #333333;
         border-bottom: 1px dotted #333333;
       }
@@ -149,20 +173,19 @@
         flex: 1.2;
       }
       .four-page-sign-left-img {
-        width:50%;
+        width: 50%;
         height: auto;
       }
       .four-page-sign-right {
         flex: 1;
-        position:relative;
+        position: relative;
       }
-      .four-page-sign-right-img{
-        width:70%;
-        height:auto;
-        position:absolute;
-        left:-0.5rem;
-        top:1rem;
-
+      .four-page-sign-right-img {
+        width: 70%;
+        height: auto;
+        position: absolute;
+        left: -0.5rem;
+        top: 1rem;
       }
     </style>
   </head>
@@ -227,6 +250,7 @@
         </image>
         </svg>
       </div> -->
+
       <div class="four-page">
         <p class="four-page-title">春节假期综合症专科诊疗医院</p>
         <p class="four-page-title-second">诊断证明书</p>
@@ -251,9 +275,18 @@
           <div class="four-page-sign-right">
             <p>日期：</p>
             <p>医师：Dr.Kaopu</p>
-            <img src="./images/stamp.png" alt="" class="four-page-sign-right-img">
+            <img
+              src="./images/stamp.png"
+              alt=""
+              class="four-page-sign-right-img"
+            />
           </div>
         </div>
+      </div>
+      <div>
+        <img src="./images/clip.png" class="four-page-clip"/>
+        <img src="./images/left_hand.png" class="four-page-left-hand"/>
+        <img src="./images/right_hand.png" class="four-page-right-hand"/>
       </div>
     </div>
     <script>
