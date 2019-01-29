@@ -104,13 +104,13 @@
         font-size: 1.4rem;
       }
       .four-page-title {
-        padding-top: 12%;
+        padding-top: 11%;
         text-align: center;
         font-size: 1.5rem;
         font-weight: 600;
       }
       .four-page-title-second {
-        margin-top: 8%;
+        margin-top: 7%;
         text-align: center;
       }
       .four-page-customer {
@@ -119,43 +119,49 @@
         display: flex;
         justify-content: space-between;
       }
-      .customer-item {
+      .customer-item-name{
         display: inline-block;
         flex: 1;
       }
-      .customer-item:last-child {
-        text-align: right;
+      .customer-item-department{
+        display: inline-block;
+        flex: 1.5;
+      }
+      .customer-item-clinic{
+        display: inline-block;
+        flex: 1;
+        text-align: right; 
       }
       .four-page-result {
         margin: 0 4%;
-        padding: 10% 0;
+        padding: 9% 0;
         border-top: 1px dotted #333333;
         border-bottom: 1px dotted #333333;
       }
       .four-page-result-text {
-        margin-top: 10%;
+        margin-top: 5%;
       }
       .four-page-sign {
         padding: 4% 4% 0;
         display: flex;
       }
       .four-page-sign-left {
-        flex: 1;
+        flex: 1.2;
       }
       .four-page-sign-left-img {
-        width: 8rem;
-        height: 8rem;
+        width:50%;
+        height: auto;
       }
       .four-page-sign-right {
         flex: 1;
         position:relative;
       }
       .four-page-sign-right-img{
-        width:10rem;
+        width:70%;
         height:auto;
         position:absolute;
         left:-0.5rem;
-        top:1.2rem;
+        top:1rem;
 
       }
     </style>
@@ -225,9 +231,9 @@
         <p class="four-page-title">春节假期综合症专科诊疗医院</p>
         <p class="four-page-title-second">诊断证明书</p>
         <div class="four-page-customer">
-          <span class="customer-item">姓名</span>
-          <span class="customer-item">性别：变态反应科</span>
-          <span class="customer-item">门诊诊断</span>
+          <span class="customer-item-name">姓名</span>
+          <span class="customer-item-department">科别：变态反应科</span>
+          <span class="customer-item-clinic">门诊诊断</span>
         </div>
         <div class="four-page-result">
           <p>诊断及建议</p>
