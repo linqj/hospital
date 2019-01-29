@@ -168,8 +168,8 @@
       .four-page-sign-left-img {
         /* width: 50%;
         height: auto; */
-        width:100px;
-        height:100px;
+        width: 100px;
+        height: 100px;
       }
       .four-page-sign-right {
         flex: 1;
@@ -185,7 +185,7 @@
       .four-page-content-img {
         display: none;
       }
-      #img{
+      #img {
         width: 91%;
         height: 73%;
         margin: 13% auto 0;
@@ -262,7 +262,7 @@
           </image>
         </svg>
       </div>
-      <img src="" id="img"/>
+      <img src="" id="img" />
       <div class="four-page">
         <p class="four-page-title">春节假期综合症专科诊疗医院</p>
         <p class="four-page-title-second">诊断证明书</p>
@@ -287,14 +287,13 @@
           <div class="four-page-sign-right">
             <p class="four-page-sign-date">日期：</p>
             <p>医师：Dr.Kaopu</p>
-            <p> <img
-              src="./images/stamp.png"
-              class="four-page-sign-right-img"
-            /></p>
+            <p>
+              <img src="./images/stamp.png" class="four-page-sign-right-img" />
+            </p>
           </div>
         </div>
       </div>
-     
+
       <div class="four-page-content-img">
         <img src="./images/clip.png" class="four-page-clip" />
         <img src="./images/left_hand.png" class="four-page-left-hand" />
@@ -447,8 +446,6 @@
         // customerName.innerHTML = "姓名：" + nameValue;
         // signDate.innerHTML = "日期：" + this.getNowDate();
 
-    
-
         //loading页面显示2秒后进入结果页面
         setTimeout(function() {
           app.style.backgroundImage = "url('./images/background4.jpg')";
@@ -457,36 +454,45 @@
           customerName.innerHTML = "姓名：" + nameValue;
           signDate.innerHTML = "日期：" + this.getNowDate();
           fourPageImg.style.display = "block";
-            //loading页面显示2秒后进入结果页面
-       
-              // 进行canvas生成图片
-        // html2canvas(fourPage, {
-        //   onrendered: function(canvas) {
-        //     //添加属性
-        //     canvas.setAttribute("id", "thecanvas");
-        //     //读取属性值
-        //     // var value= canvas.getAttribute('id');
-        //     fourPage.innerHTML = "";
-        //     fourPage.appendChild(canvas);
-        //     var thecanvas = document.getElementById("thecanvas");
-        //     var imgUrl = thecanvas.toDataURL("image/png");
-        //     var img = document.getElementById("img");
-        //     fourPage.style.display = "none";
-        //     img.style.display = "block";
-        //     img.src = imgUrl;
-        //   }
-        // });
+          //loading页面显示2秒后进入结果页面
+
+          // 进行canvas生成图片
+          // html2canvas(fourPage, {
+          //   onrendered: function(canvas) {
+          //     //添加属性
+          //     canvas.setAttribute("id", "thecanvas");
+          //     //读取属性值
+          //     // var value= canvas.getAttribute('id');
+          //     fourPage.innerHTML = "";
+          //     fourPage.appendChild(canvas);
+          //     var thecanvas = document.getElementById("thecanvas");
+          //     var imgUrl = thecanvas.toDataURL("image/png");
+          //     var img = document.getElementById("img");
+          //     fourPage.style.display = "none";
+          //     img.style.display = "block";
+          //     img.src = imgUrl;
+          //   }
+          // });
         }, 2000);
-         setTimeout(this.convert2canvas(),4000);
+        setTimeout(function() {
+          this.getCanvasImg();
+        }, 3000);
       }
-     function getCanvasImg(){
-      setTimeout( function(){
+      function getCanvasImg() {
+        alert(1);
+        // var scale = 3;
+        var width = fourPage.offsetWidth; //获取dom 宽度
+        var height = fourPage.offsetHeight; //获取dom 高度
         html2canvas(fourPage, {
           onrendered: function(canvas) {
+                                var context = canvas.getContext('2d');
+            // 【重要】关闭抗锯齿
+            context.mozImageSmoothingEnabled = false;
+            context.webkitImageSmoothingEnabled = false;
+            context.msImageSmoothingEnabled = false;
+            context.imageSmoothingEnabled = false;
             //添加属性
             canvas.setAttribute("id", "thecanvas");
-            //读取属性值
-            // var value= canvas.getAttribute('id');
             fourPage.innerHTML = "";
             fourPage.appendChild(canvas);
             var thecanvas = document.getElementById("thecanvas");
@@ -495,43 +501,43 @@
             fourPage.style.display = "none";
             img.style.display = "block";
             img.src = imgUrl;
+            img.style.width = width;
+            img.style.height = height;
           }
-        })
-      }  ,7000)
-
-     }
-    function convert2canvas() {
-      alert(1)
- var width = fourPage.offsetWidth; 
- var height = fourPage.offsetHeight; 
- var canvas = document.createElement("canvas"); 
- var scale = 2; 
-
- canvas.width = width * scale; 
- canvas.height = height * scale; 
- canvas.getContext("2d").scale(scale, scale); 
-
- var opts = {
-     scale: scale, 
-     canvas: canvas, 
-     logging: true, 
-     width: width, 
-     height: height 
- };
- html2canvas(fourPage, opts).then(function (canvas) {
-     var context = canvas.getContext('2d');
-
-     var img = Canvas2Image.convertToImage(canvas, canvas.width, canvas.height);
-
-     document.body.appendChild(img);
-     $(img).css({
-         "width": canvas.width / 2 + "px",
-         "height": canvas.height / 2 + "px",
-     })
- });
-}
-
-
+        });
+      }
+      function convert2canvas() {
+    
+        var scale = 3;
+        var width = fourPage.offsetWidth; //获取dom 宽度
+        var height = fourPage.offsetHeight; //获取dom 高度
+        html2canvas(fourPage, {
+          scale:scale,
+          width: width * scale,
+          height: width* scale,
+        }).then(canvas => {
+          var context = canvas.getContext('2d');
+          // 【重要】关闭抗锯齿 https://segmentfault.com/a/1190000011478657
+          context.mozImageSmoothingEnabled = false;
+          context.webkitImageSmoothingEnabled = false;
+          context.msImageSmoothingEnabled = false;
+          context.imageSmoothingEnabled = false;
+          //处理canvas，例如加水印
+          //完成canvas
+          canvas.setAttribute("id", "thecanvas");
+            fourPage.innerHTML = "";
+            fourPage.appendChild(canvas);
+            var thecanvas = document.getElementById("thecanvas");
+            var imgUrl = thecanvas.toDataURL("image/jpeg");
+          // var src64 = canvas.toDataURL();
+          var img = document.getElementById("imgUrl");
+            fourPage.style.display = "none";
+            img.style.display = "block";
+            img.style.width =width;
+            img.style.height =height;
+            img.src = src64;
+        });
+      }
 
       function getNowDate() {
         var now = new Date();
