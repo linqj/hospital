@@ -10,7 +10,7 @@
       content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
     />
     <title>不靠谱医院活动</title>
-    <link rel="stylesheet" type="text/css" href="./icomoon/style.css" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
     <script src="./data.js"></script>
     <style>
       * {
@@ -33,11 +33,11 @@
         overflow: hidden;
         height: 100%;
         /* background: #e4f1ff; */
-        background-image: url("./images/background4.jpg");
+        background-image: url("./images/background1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        position:relative;
+        position: relative;
       }
       input {
         border: 1px solid red;
@@ -97,6 +97,7 @@
       .three-page {
         widows: 100%;
         height: 100%;
+        display: none;
       }
       .four-page {
         width: 91%;
@@ -104,27 +105,28 @@
         background: #ffffff;
         margin: 13% auto 0;
         font-size: 1.4rem;
+        display: none;
       }
-      .four-page-clip{
-        position:absolute;
-        top:6%;
-        left:20%;
-        width:60%;
-        height:auto;
+      .four-page-clip {
+        position: absolute;
+        top: 6%;
+        left: 20%;
+        width: 60%;
+        height: auto;
       }
-      .four-page-left-hand{
-        position:absolute;
-        top:12%;
-        left:-5%;
-        width:20%;
-        height:auto;
+      .four-page-left-hand {
+        position: absolute;
+        top: 12%;
+        left: -5%;
+        width: 20%;
+        height: auto;
       }
-      .four-page-right-hand{
-        position:absolute;
-        top:12%;
-        right:-5%;
-        width:20%;
-        height:auto;
+      .four-page-right-hand {
+        position: absolute;
+        top: 12%;
+        right: -5%;
+        width: 20%;
+        height: auto;
       }
       .four-page-title {
         padding-top: 12.5%;
@@ -158,7 +160,7 @@
       .four-page-result {
         margin: 0 4%;
         padding-top: 8%;
-        height:43%;
+        height: 43%;
         border-top: 1px dotted #333333;
         border-bottom: 1px dotted #333333;
       }
@@ -187,12 +189,15 @@
         left: -0.5rem;
         top: 1rem;
       }
+      .four-page-content-img {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <!-- 第一页 -->
-      <!-- <div class="first-page">
+      <div class="first-page">
         <input
           type="text"
           placeholder="请输入您的姓名"
@@ -204,34 +209,34 @@
           class="first-page-button"
           onclick="toInsure()"
         />
-      </div> -->
-      <!-- <div class="second-page">
-        <p class="second-page-title">第一口吃什么</p>
+      </div>
+      <div class="second-page">
+        <p class="second-page-title"></p>
         <div class="second-page-content">
-            <img src="./images/radio.png" class="content-img">
+          <img src="./images/radio.png" class="content-img" />
           <span class="content-tip"></span>
         </div>
         <div class="second-page-content">
-          <img src="./images/radio.png" class="content-img">
-           <span class="content-tip"></span>
+          <img src="./images/radio.png" class="content-img" />
+          <span class="content-tip"></span>
         </div>
         <div class="second-page-content">
-            <img src="./images/radio.png" class="content-img">
-            <span class="content-tip"></span>
+          <img src="./images/radio.png" class="content-img" />
+          <span class="content-tip"></span>
         </div>
         <div class="second-page-content">
-            <img src="./images/radio.png" class="content-img">
-            <span class="content-tip"></span>
+          <img src="./images/radio.png" class="content-img" />
+          <span class="content-tip"></span>
         </div>
-      </div> -->
-      <!-- <div class="three-page">
+      </div>
+      <div class="three-page">
         <svg
-        style="width:100%;height:100%;"
-        xmlns="http://www.w3.org/2000/svg"
-        id="mySVG"
-        viewBox="0 0 100% 100%"
-        preserveAspectRatio="xMidYMid meet"
-      >
+          style="width:100%;height:100%;"
+          xmlns="http://www.w3.org/2000/svg"
+          id="mySVG"
+          viewBox="0 0 100% 100%"
+          preserveAspectRatio="xMidYMid meet"
+        >
           <image
             xlink:href="./images/sun.png"
             x="7%"
@@ -240,16 +245,16 @@
             width="86%"
             height="50"
           >
-          <animate
-          attributeName="y"
-          values="5%;70%;5%"
-          begin="0s"
-          dur="2s"
-          repeatCount="indefinite"
-        />
-        </image>
+            <animate
+              attributeName="y"
+              values="5%;70%;5%"
+              begin="0s"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </image>
         </svg>
-      </div> -->
+      </div>
 
       <div class="four-page">
         <p class="four-page-title">春节假期综合症专科诊疗医院</p>
@@ -283,10 +288,10 @@
           </div>
         </div>
       </div>
-      <div>
-        <img src="./images/clip.png" class="four-page-clip"/>
-        <img src="./images/left_hand.png" class="four-page-left-hand"/>
-        <img src="./images/right_hand.png" class="four-page-right-hand"/>
+      <div class="four-page-content-img">
+        <img src="./images/clip.png" class="four-page-clip" />
+        <img src="./images/left_hand.png" class="four-page-left-hand" />
+        <img src="./images/right_hand.png" class="four-page-right-hand" />
       </div>
     </div>
     <script>
@@ -303,8 +308,6 @@
       var secondPageContents = document.getElementsByClassName(
         "second-page-content"
       );
-      var merrageCode = null; //婚姻状况
-
       // var pageNum = 0 || sessionStorage.getItem("pageNum");
       var pageNum = 0; //当前是第几题
       var nameValue = null; //用户输入的名称
@@ -334,6 +337,11 @@
           parentNode.children[1].innerHTML = item.value;
           parentNode.children[0].setAttribute("src", "./images/radio.png");
         });
+        if(option.options.length<4){
+          var parentNode = secondPageContents[3];
+          parentNode.children[1].innerHTML = '';
+          parentNode.children[0].setAttribute("src", "");
+        }
         for (var i = 0; i < secondPageContents.length; i++) {
           let childValue = secondPageContents[i].children[1].innerText;
           if (childValue) {
@@ -346,23 +354,74 @@
                 if (num == "0") {
                   pageNum += 1;
                 } else if (num == "1") {
-                  merrageCode = i;
+                  // merrageCode = i;
                   //第二题判断是选择的那一道题
                   if (i == "0") {
-                    pageNum = 10;
+                    pageNum = 8;
                     //选择已婚
+                  } else if (i == "1" || i == "2") {
+                    pageNum = 3;
+                  } else {
+                    //选择了管你屁事
                   }
-                } else if (pageNum == 10 && merrageCode == "0") {
+                } else if (num == 8) {
+                  if (i == "0") {
+                    pageNum = 4;
+                  } else if (i == "2") {
+                    pageNum = 2;
+                  } else {
+                    //选择了管你屁事
+                    this.dealNoCare();
+                  }
+                } else if (num == 4) {
+                  if(i==2){
+                    //选择了管你屁事
+                    this.dealNoCare();
+                  }else{
+                    pageNum = 2;
+                  }
+                } else if (num == 2) {
+                  if(i==2){
+                    //选择了管你屁事
+                    this.dealNoCare();
+                  }else{
+                    pageNum = 5;
+                  }
+                } else if (num == 3) {
+                  if (i == 0) {
+                    pageNum = 6;
+                  } else if (i == 1 || i == 2) {
+                    pageNum = 5;
+                  }
+                } else if (num == 6) {
+                  if(i==2){
+                    //选择了管你屁事
+                    this.dealNoCare();
+                  }else{
+                    pageNum = 7;
+                  }
+                } else if (num == 7) {
+                  pageNum = 5;
+                } else if (num == 5) {
+                  //最后一题进入loading页面
+                  this.dealResult();
                 }
-
                 setTimeout(function() {
                   return operateOption(pageNum);
-                }, 500);
+                }, 400);
               };
             })(i);
           }
         }
       }
+      //处理关你屁事的选项
+      function dealNoCare(){
+
+      }
+        //最后结果页
+        function dealResult(){
+
+}
     </script>
   </body>
 </html>
