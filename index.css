@@ -18,7 +18,7 @@
   .first-page {
       position: absolute;
       left:0;
-      bottom:8%;
+      bottom:7%;
     /* margin-top: 128%; */
     padding: 0 27.3%;
     display: block;
@@ -205,6 +205,6 @@
   }
   @media screen and (max-width: 350px) {
     .four-page {
-      height: 78%;
+      height: 80%;
     }
   }
