@@ -36,7 +36,9 @@ img {
 	border-image:none;
 	outline:none
 }
-
+img[src = ""]{
+	opacity:0;
+	}
 em,i {
 	font-style: normal;
 }
