@@ -119,11 +119,11 @@
   }
   .customer-item-name {
     display: inline-block;
-    flex: 1.4;
+    flex: 2;
   }
   .customer-item-department {
     display: inline-block;
-    flex: 1.8;
+    flex: 2;
   }
   .customer-item-clinic {
     display: inline-block;

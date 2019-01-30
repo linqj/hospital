@@ -179,7 +179,7 @@ function dealResult() {
     fourPageImg.style.display = "block";
     // html转化为canvas生成图片
     this.html2Canvas();
-  }, 2000);
+  }, 3000);
 }
 
 function html2Canvas() {
