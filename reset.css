@@ -34,6 +34,7 @@ a{
 img {
 	border: none;
 	border-image:none;
+	outline:none
 }
 
 em,i {
