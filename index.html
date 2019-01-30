@@ -529,12 +529,10 @@ to {width:80%;}
           // });
         }, 2000);
         setTimeout(function() {
-          this.convert2canvas();
+          this.getCanvasImg();
         }, 4000);
       }
       function getCanvasImg() {
-        alert(1);
-        // var scale = 3;
         var width = fourPage.offsetWidth; //获取dom 宽度
         var height = fourPage.offsetHeight; //获取dom 高度
         html2canvas(fourPage, {
