@@ -144,6 +144,8 @@ function dealNoCare(num) {
     this.setNestTep(4);
   }else if(num=='2'||num=='6'){
     this.setNestTep(5);
+  }else if(num=='4'){
+    this.setNestTep(2);
   }
 }
 function setNestTep(index){
