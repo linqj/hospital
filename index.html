@@ -194,15 +194,34 @@
       p {
         line-height: 2rem;
       }
-      .hand-move{
-        position:absolute;
-        top:0;
-        left:0;
-        background:rgba(0,0,0,0.6);
-        height:100%;
-        width:100%;  
-        display:none;
+      .hand-move {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        height: 100%;
+        width: 100%;
+        display: none;
       }
+      .hand-move-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10%;
+        height:auto;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        /* animation:mymove 5s infinite; */
+
+      }
+      /* .hand-move-img-move{
+        transform:scale(8,8);
+      } */
+      @keyframes mymove
+{
+from {width:10%;}
+to {width:80%;}
+}
       @media screen and (max-width: 350px) {
         .four-page {
           height: 75%;
@@ -307,51 +326,12 @@
         <img src="./images/left_hand.png" class="four-page-left-hand" />
         <img src="./images/right_hand.png" class="four-page-right-hand" />
       </div>
-          <svg
-          style="width:100%;height:100%;"
-          xmlns="http://www.w3.org/2000/svg"
-          id="mySVG"
-          viewBox="0 0 100% 100%"
-          preserveAspectRatio="xMidYMid meet"
-          class="hand-move"
-        >
-         <rect
-                x="0"
-                y="0"
-                opacity="0.5"
-                height="100%"
-                width="100%"
-                fill="#000000"
-              />
-              <image
-                xlink:href="./images/hand_move.png"
-                x="50%"
-                y="100"
-                width="0"
-                height="300"
-              >
-              <!-- <animateTransform accumulate="none" additive="replace" attributeName="scale" begin="1s" calcMode="linear" dur="1s" fill="freeze" restart="never" type="translate" values="2,2"></animateTransform> -->
-              <animate
-              attributeName="width"
-              from="0"
-              to="70%"
-              begin="5s"
-              dur="0.2s"
-              fill="freeze"
-            />
-              <animate
-              attributeName="x"
-              from="50%"
-              to="15%"
-              begin="5s"
-              dur="0.2s"
-              fill="freeze"
-            />
-            </image> 
-              </svg>
+      <div class="hand-move">
+        <img src="./images/hand_move.png" alt="" class="hand-move-img" />
       </div>
-    
-      <!-- <div class="hand-move">
+    </div>
+
+    <!-- <div class="hand-move">
 <img src="./images/hand_move.png" class="hand-move-img">
       </div>
     </div> -->
@@ -363,6 +343,7 @@
       var threePage = document.getElementsByClassName("three-page")[0];
       var fourPage = document.getElementsByClassName("four-page")[0];
       var handMove = document.getElementsByClassName("hand-move")[0];
+      var handMoveImg = document.getElementsByClassName("hand-move-img")[0];
       var fourPageImg = document.getElementsByClassName(
         "four-page-content-img"
       )[0];
@@ -399,7 +380,7 @@
         var option = questionData.find(item => {
           return item.order == num;
         });
-        var isUnNormal=false;//是否选择了关你屁事
+        var isUnNormal = false; //是否选择了关你屁事
         secondPageTitle.innerHTML = option.title;
         option.options.forEach((item, index) => {
           var parentNode = secondPageContents[index];
@@ -432,7 +413,7 @@
                     pageNum = 3;
                   } else {
                     //选择了管你屁事
-                    isUnNormal=true;
+                    isUnNormal = true;
                     that.dealNoCare();
                   }
                 } else if (num == 8) {
@@ -442,13 +423,13 @@
                     pageNum = 2;
                   } else {
                     //选择了管你屁事
-                    isUnNormal=true;
+                    isUnNormal = true;
                     that.dealNoCare();
                   }
                 } else if (num == 4) {
                   if (i == 2) {
                     //选择了管你屁事
-                    isUnNormal=true;
+                    isUnNormal = true;
                     that.dealNoCare();
                   } else {
                     pageNum = 2;
@@ -456,7 +437,7 @@
                 } else if (num == 2) {
                   if (i == 2) {
                     //选择了管你屁事
-                    isUnNormal=true;
+                    isUnNormal = true;
                     that.dealNoCare();
                   } else {
                     pageNum = 5;
@@ -470,7 +451,7 @@
                 } else if (num == 6) {
                   if (i == 2) {
                     //选择了管你屁事
-                    isUnNormal=true;
+                    isUnNormal = true;
                     that.dealNoCare();
                   } else {
                     pageNum = 7;
@@ -481,10 +462,10 @@
                   //最后一题进入loading页面
                   that.dealResult();
                 }
-                if (num != 5&&!isUnNormal) {
+                if (num != 5 && !isUnNormal) {
                   setTimeout(function() {
                     return operateOption(pageNum);
-                  }, 400);
+                  }, 500);
                 }
               };
             })(i);
@@ -494,8 +475,13 @@
       //处理关你屁事的选项
       function dealNoCare() {
         handMove.style.display = "block";
+        handMoveImg.style.animation='mymove 0.5s forwards';
+        // animation:mymove 5s infinite;
+        // handMoveImg.className+=' hand-move-img-move'
         // handMove.innerHTML='<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/hand_move.png" x="50%" y="100" width="60%" height="300" opacity="0"><animate  attributeName="opacity" from="0" to="1" begin="4s" dur="1s" fill="freeze"/><animate  attributeName="x" from="50%" to="20%" begin="5s" dur="1s" fill="freeze"/><animate attributeName="width" from="0" to="60%" begin="5s" dur="1s"/></image>';
-        setTimeout(function() {this.dealResult()},4000);
+        setTimeout(function() {
+          this.dealResult();
+        }, 3000);
       }
       //最后结果页
       function dealResult() {
@@ -544,7 +530,7 @@
         }, 2000);
         setTimeout(function() {
           this.convert2canvas();
-        }, 3000);
+        }, 4000);
       }
       function getCanvasImg() {
         alert(1);
@@ -553,7 +539,7 @@
         var height = fourPage.offsetHeight; //获取dom 高度
         html2canvas(fourPage, {
           onrendered: function(canvas) {
-                                var context = canvas.getContext('2d');
+            var context = canvas.getContext("2d");
             // 【重要】关闭抗锯齿
             context.mozImageSmoothingEnabled = false;
             context.webkitImageSmoothingEnabled = false;
@@ -575,16 +561,15 @@
         });
       }
       function convert2canvas() {
-    
         var scale = 3;
         var width = fourPage.offsetWidth; //获取dom 宽度
         var height = fourPage.offsetHeight; //获取dom 高度
         html2canvas(fourPage, {
-          scale:scale,
+          scale: scale,
           width: width * scale,
-          height: width* scale,
+          height: width * scale
         }).then(canvas => {
-          var context = canvas.getContext('2d');
+          var context = canvas.getContext("2d");
           // 【重要】关闭抗锯齿 https://segmentfault.com/a/1190000011478657
           context.mozImageSmoothingEnabled = false;
           context.webkitImageSmoothingEnabled = false;
@@ -593,17 +578,17 @@
           //处理canvas，例如加水印
           //完成canvas
           canvas.setAttribute("id", "thecanvas");
-            fourPage.innerHTML = "";
-            fourPage.appendChild(canvas);
-            var thecanvas = document.getElementById("thecanvas");
-            var imgUrl = thecanvas.toDataURL("image/jpeg");
+          fourPage.innerHTML = "";
+          fourPage.appendChild(canvas);
+          var thecanvas = document.getElementById("thecanvas");
+          var imgUrl = thecanvas.toDataURL("image/jpeg");
           // var src64 = canvas.toDataURL();
           var img = document.getElementById("imgUrl");
-            fourPage.style.display = "none";
-            img.style.display = "block";
-            img.style.width =width;
-            img.style.height =height;
-            img.src = src64;
+          fourPage.style.display = "none";
+          img.style.display = "block";
+          img.style.width = width;
+          img.style.height = height;
+          img.src = src64;
         });
       }
 
