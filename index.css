@@ -200,7 +200,7 @@
       width: 10%;
     }
     to {
-      width: 80%;
+      width: 75%;
     }
   }
   @media screen and (max-width: 350px) {

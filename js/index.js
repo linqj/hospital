@@ -137,10 +137,10 @@ function operateOption(num) {
 //处理关你屁事的选项
 function dealNoCare() {
   handMove.style.display = "block";
-  handMoveImg.style.animation = "mymove 0.5s forwards";
+  handMoveImg.style.animation = "mymove 0.1s forwards";
   setTimeout(function() {
     this.dealResult();
-  }, 2000);
+  }, 3000);
 }
 //最后结果页
 function dealResult() {
