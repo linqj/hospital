@@ -76,7 +76,7 @@ function operateOption(num) {
             } else {
               //选择了管你屁事
               isUnNormal = true;
-              that.dealNoCare();
+              that.dealNoCare(num);
             }
           } else if (num == 8) {
             if (i == "0") {
@@ -86,13 +86,13 @@ function operateOption(num) {
             } else {
               //选择了管你屁事
               isUnNormal = true;
-              that.dealNoCare();
+              that.dealNoCare(num);
             }
           } else if (num == 4) {
             if (i == 2) {
               //选择了管你屁事
               isUnNormal = true;
-              that.dealNoCare();
+              that.dealNoCare(num);
             } else {
               pageNum = 2;
             }
@@ -100,7 +100,7 @@ function operateOption(num) {
             if (i == 2) {
               //选择了管你屁事
               isUnNormal = true;
-              that.dealNoCare();
+              that.dealNoCare(num);
             } else {
               pageNum = 5;
             }
@@ -114,7 +114,7 @@ function operateOption(num) {
             if (i == 2) {
               //选择了管你屁事
               isUnNormal = true;
-              that.dealNoCare();
+              that.dealNoCare(num);
             } else {
               pageNum = 7;
             }
@@ -135,12 +135,25 @@ function operateOption(num) {
   }
 }
 //处理关你屁事的选项
-function dealNoCare() {
+function dealNoCare(num) {
   handMove.style.display = "block";
   handMoveImg.style.animation = "mymove 0.1s forwards";
+  if(num=='1'){
+    this.setNestTep(3);
+  }else if(num=='8'){
+    this.setNestTep(4);
+  }else if(num=='2'||num=='6'){
+    this.setNestTep(5);
+  }
+}
+function setNestTep(index){
   setTimeout(function() {
-    this.dealResult();
-  }, 3000);
+    pageNum=index;
+    this.operateOption(pageNum);
+    handMove.style.display = "none";
+    handMoveImg.style.width = "10%";
+    handMoveImg.style.animation = "";
+  }, 1000);
 }
 //最后结果页
 function dealResult() {
@@ -166,7 +179,7 @@ function dealResult() {
     fourPageImg.style.display = "block";
     // html转化为canvas生成图片
     this.html2Canvas();
-  }, 3000);
+  }, 2000);
 }
 
 function html2Canvas() {
