@@ -16,7 +16,10 @@
     text-align: center;
   }
   .first-page {
-    margin-top: 128%;
+      position: absolute;
+      left:0;
+      bottom:8%;
+    /* margin-top: 128%; */
     padding: 0 27.3%;
     display: block;
   }
@@ -202,6 +205,6 @@
   }
   @media screen and (max-width: 350px) {
     .four-page {
-      height: 76%;
+      height: 77%;
     }
   }
