@@ -180,7 +180,7 @@ function dealResult() {
     signDate.innerHTML = "日期：" + this.getNowDate();
     fourPageImg.style.display = "block";
     // html转化为canvas生成图片
-    this.html2Canvas();
+    // this.html2Canvas();
   }, 3000);
 }
 

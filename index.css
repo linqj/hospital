@@ -144,6 +144,7 @@
     padding: 3% 4% 1%;
     display: flex;
     font-size: 1.2rem;
+    min-height:20%;
   }
   .four-page-sign-left {
     flex: 1;
@@ -204,11 +205,11 @@
       width: 75%;
     }
   }
-  @media screen and (max-width: 350px) {
+  /* @media screen and (max-width: 350px) {
     .four-page {
-      height: 90%;
-    }
-    .four-page-result{
-        height:43%;
-    }
-  }
+      height: 76%;
+    } */
+    /* .four-page-result{
+        height:40%;
+    } */
+  /* } */
