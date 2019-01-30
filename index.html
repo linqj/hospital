@@ -194,6 +194,26 @@
       p {
         line-height: 2rem;
       }
+      .hand-move{
+        position:absolute;
+        top:0;
+        left:0;
+        background:rgba(255,228,5,0.6);
+        height:100%;
+        width:100%;
+        /* display: table-cell;
+    vertical-align: middle; */
+    text-align: center;     
+      }
+      .hand-move-img{
+        width:60%;
+        height:auto;
+        position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            text-align: center;
+      }
       @media screen and (max-width: 350px) {
         .four-page {
           height: 75%;
@@ -293,11 +313,13 @@
           </div>
         </div>
       </div>
-
       <div class="four-page-content-img">
         <img src="./images/clip.png" class="four-page-clip" />
         <img src="./images/left_hand.png" class="four-page-left-hand" />
         <img src="./images/right_hand.png" class="four-page-right-hand" />
+      </div>
+      <div class="hand-move">
+<img src="./images/hand_move.png" class="hand-move-img">
       </div>
     </div>
     <script>
@@ -475,7 +497,7 @@
           // });
         }, 2000);
         setTimeout(function() {
-          this.getCanvasImg();
+          this.convert2canvas();
         }, 3000);
       }
       function getCanvasImg() {
