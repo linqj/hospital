@@ -181,7 +181,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     display: none;
@@ -192,8 +192,9 @@
     left: 50%;
     width: 10%;
     height: auto;
-    transform: translate(-50%, -50%);
+    transform: translate(-49%, -50%);
     text-align: center;
+    opacity: 0.8;
   }
   @keyframes mymove {
     from {
