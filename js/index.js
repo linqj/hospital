@@ -21,6 +21,12 @@ var secondPageContents = document.getElementsByClassName(
 // var pageNum = 0 || sessionStorage.getItem("pageNum");
 var pageNum = 0; //当前是第几题
 var nameValue = null; //用户输入的名称
+function blurInput(){
+  //输入框失去焦点，
+      //把页面滑动到顶端
+      document.body.scrollTop =0;
+     document.documentElement.scrollTop = 0;
+}
 function toInsure() {
   nameValue = firstPageInput.value;
   //判断是否已经输入了值
@@ -28,7 +34,6 @@ function toInsure() {
     alert("请输入您的姓名");
   } else {
     //把页面滑动到顶端
-      // window.scrollBy(0,100);
       document.body.scrollTop =0;
      document.documentElement.scrollTop = 0;
     //点击立即诊断，换背景图片隐藏首页的内容
