@@ -27,6 +27,10 @@ function toInsure() {
   if (!nameValue) {
     alert("请输入您的姓名");
   } else {
+    //把页面滑动到顶端
+      // window.scrollBy(0,100);
+      document.body.scrollTop =0;
+     document.documentElement.scrollTop = 0;
     //点击立即诊断，换背景图片隐藏首页的内容
     app.style.backgroundImage = "url('./images/background2.jpg')";
     firstPage.style.display = "none";
