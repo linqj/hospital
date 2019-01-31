@@ -79,6 +79,7 @@
     margin: 13% auto 0;
     font-size: 1.4rem;
     display: none;
+    padding:16% 4% 1%;
   }
   .four-page-clip {
     position: absolute;
@@ -102,7 +103,7 @@
     height: auto;
   }
   .four-page-title {
-    padding-top: 16%;
+    /* padding-top: 16%; */
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
@@ -112,7 +113,7 @@
     text-align: center;
   }
   .four-page-customer {
-    margin: 4% 4% 0;
+    margin: 4% 0 0;
     /* border-bottom: 1px dotted #333333; */
     display: flex;
     justify-content: space-between;
@@ -131,7 +132,7 @@
     text-align: right;
   }
   .four-page-result {
-    margin: 0.1rem 4% 0;
+    margin: 0.1rem 0 0;
     padding-top: 8%;
     height: 45%;
     border-top: 1px dotted #504e4e;
@@ -141,7 +142,7 @@
     margin-top: 5%;
   }
   .four-page-sign {
-    padding: 3% 4% 1%;
+    padding: 3% 0 1%;
     display: flex;
     font-size: 1.2rem;
     min-height:20%;
@@ -209,10 +210,10 @@
     .four-page {
       height: 82%;
     } 
-    .four-page-result{
+    /* .four-page-result{
         height:40%;
-    }
-    .four-page-title{
+    } */
+    /* .four-page-title{
       padding-top: 14%;
-    }
+    } */
   }

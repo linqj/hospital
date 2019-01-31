@@ -1,3 +1,7 @@
+window.onload=function(){
+  alert(4);
+}
+
 // 点击立即诊断
 var app = document.getElementById("app");
 var firstPage = document.getElementsByClassName("first-page")[0];
@@ -189,7 +193,6 @@ function dealResult() {
 }
 
 function html2Canvas() {
-  alert(3);
   const shareContent = fourPage; // 需要绘制的部分的 (原生）dom 对象 ，注意容器的宽度不要使用百分比，使用固定宽度，避免缩放问题
   const width = shareContent.offsetWidth; // 获取(原生）dom 宽度
   const height = shareContent.offsetHeight; // 获取(原生）dom 高
