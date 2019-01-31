@@ -180,11 +180,12 @@ function dealResult() {
     signDate.innerHTML = "日期：" + this.getNowDate();
     fourPageImg.style.display = "block";
     // html转化为canvas生成图片
-    // this.html2Canvas();
+    this.html2Canvas();
   }, 3000);
 }
 
 function html2Canvas() {
+  alert(1);
   const shareContent = fourPage; // 需要绘制的部分的 (原生）dom 对象 ，注意容器的宽度不要使用百分比，使用固定宽度，避免缩放问题
   const width = shareContent.offsetWidth; // 获取(原生）dom 宽度
   const height = shareContent.offsetHeight; // 获取(原生）dom 高

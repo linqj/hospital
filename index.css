@@ -205,11 +205,11 @@
       width: 75%;
     }
   }
-  /* @media screen and (max-width: 350px) {
+  @media screen and (max-width: 350px) {
     .four-page {
-      height: 76%;
-    } */
-    /* .four-page-result{
-        height:40%;
-    } */
-  /* } */
+      height: 78%;
+    } 
+    .four-page-result{
+        height:42%;
+    }
+  }
