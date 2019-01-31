@@ -1,7 +1,3 @@
-window.onload=function(){
-  alert(4);
-}
-
 // 点击立即诊断
 var app = document.getElementById("app");
 var firstPage = document.getElementsByClassName("first-page")[0];
