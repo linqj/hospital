@@ -140,5 +140,14 @@
       </div>
     </div>
     <script src="./js/index.js"></script>
+    <script>
+      window.addEventListener('message',(event)=>{
+        var origin=event.origin||event.originalEvent.origin
+        if(orign==='http://localhost:9528'){
+          console.log(event.data)
+          event.source.postMessage('接受到了',origin)
+           }
+      })
+    </script>
   </body>
 </html>
